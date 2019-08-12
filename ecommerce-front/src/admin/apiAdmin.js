@@ -18,7 +18,7 @@ export const createCategory =  (userId, token,category)=>{
      });
   };  
 
-  export const createProduct =  (userId, token, product)=>{
+  export const productCreate =  (userId, token, product)=>{
     return  fetch(`${API}/product/create/${userId}`, {
          method: "POST",
          headers: {

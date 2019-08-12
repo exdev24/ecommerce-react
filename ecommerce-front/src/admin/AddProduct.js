@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import Layout from '../core/Layout';
 import {isAuthenticated} from '../auth';
 import {Link} from 'react-router-dom'; 
-import {createProduct, getCategories} from './apiAdmin'; 
+import {productCreate, getCategories} from './apiAdmin'; 
 
 
 const AddProduct  = ()=>{
@@ -57,7 +57,7 @@ const AddProduct  = ()=>{
 
     const handleChange = name=>event=>{
       const value = name ==="photo"? event.target.files[0]: event.target.value;
-      formData.set(name,value);
+      formData.set(name,value); 
       setValues({...values, [name]: value});
     }; 
 
@@ -65,7 +65,7 @@ const AddProduct  = ()=>{
       event.preventDefault();
       setValues({...values, error: "", loading: true});
 
-      createProduct(user._id,token,formData)
+      productCreate(user._id,token,formData)
        .then(data=>{
          if(data.error){
            setValues({...values, error: data.error})
@@ -141,7 +141,7 @@ const AddProduct  = ()=>{
      ); 
 
      const showLoading = ()=>(
-      <div className="alert alert-success">
+      <div className="alert alert-success" style={{display: loading?'':'none'}}>
         <h2>Loading...</h2>
       </div>
      );
