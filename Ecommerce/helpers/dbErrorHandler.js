@@ -1,9 +1,8 @@
-"use strict"
+"use strict";
 
-/** Get 
- * *Unique error field name 
+/**
+ * Get unique error field name
  */
-
 const uniqueMessage = error => {
     let output;
     try {
@@ -18,16 +17,16 @@ const uniqueMessage = error => {
     } catch (ex) {
         output = "Unique field already exists";
     }
- 
+
     return output;
 };
- 
+
 /**
  * Get the erroror message from error object
  */
 exports.errorHandler = error => {
     let message = "";
- 
+
     if (error.code) {
         switch (error.code) {
             case 11000:
@@ -43,6 +42,7 @@ exports.errorHandler = error => {
                 message = error.errorors[errorName].message;
         }
     }
- 
+
     return message;
 };
+
