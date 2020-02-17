@@ -7,7 +7,7 @@ import { createCategory } from "./apiAdmin";
 const AddCategory = () => {
     const [name, setName] = useState("");
     const [error, setError] = useState(false);
-    const [success, setSuccess] = useState(false);
+    const [success, setSuccess] = useState(false); 
 
     // destructure user and token from localstorage
     const { user, token } = isAuthenticated();
