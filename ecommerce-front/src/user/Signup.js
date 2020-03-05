@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../core/Layout';
 import { signup } from '../auth';
+import {Animated} from "react-animated-css";
+
 
 const Signup = () => {
     const [values, setValues] = useState({
@@ -79,7 +81,9 @@ const Signup = () => {
         >
             {showSuccess()}
             {showError()}
-            {signUpForm()}
+            <Animated animationIn="bounceInUp" animationOut="fadeOut" isVisible={true}>
+              {signUpForm()}
+            </Animated>
         </Layout>
     );
 };

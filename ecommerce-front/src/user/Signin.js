@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import Layout from "../core/Layout";
 import { signin, authenticate, isAuthenticated } from "../auth";
+import {Animated} from "react-animated-css";
 
 const Signin = () => {
     const [values, setValues] = useState({
@@ -100,7 +101,9 @@ const Signin = () => {
         >
             {showLoading()}
             {showError()}
-            {signUpForm()}
+            <Animated animationIn="bounceInUp" animationOut="fadeOut" isVisible={true}>
+              {signUpForm()}
+            </Animated>
             {redirectUser()}
         </Layout>
     );
