@@ -58,9 +58,11 @@ const Signin = () => {
                     value={password}
                 />
             </div>
-            <button onClick={clickSubmit} className="btn btn-primary">
-                Submit
-            </button>
+            <Animated animationIn="fadeInLeft" animationOut="fadeOut" isVisible={true}>
+               <button onClick={clickSubmit} className="btn btn-primary">
+                  Submit
+               </button>
+            </Animated>
         </form>
     );
 
@@ -101,7 +103,7 @@ const Signin = () => {
         >
             {showLoading()}
             {showError()}
-            <Animated animationIn="bounceInUp" animationOut="fadeOut" isVisible={true}>
+            <Animated animationIn="fadeInDown" animationOut="fadeOut" isVisible={true}>
               {signUpForm()}
             </Animated>
             {redirectUser()}

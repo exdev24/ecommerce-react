@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { signout, isAuthenticated } from "../auth";
 import { itemTotal } from "./cartHelpers";
+import { Animated } from "react-animated-css";
 
 const isActive = (history, path) => {
     if (history.location.pathname === path) {
@@ -11,7 +12,8 @@ const isActive = (history, path) => {
     }
 };
 
-const Menu = ({ history }) => (
+const Menu = ({ history }) => ( 
+    <Animated animationIn="slideInUp" animationOut="fadeOut" isVisible={true}>
     <div>
         <ul className="nav nav-tabs bg-primary">
             <li className="nav-item">
@@ -112,6 +114,7 @@ const Menu = ({ history }) => (
             )}
         </ul>
     </div>
+    </Animated>
 );
 
 export default withRouter(Menu);

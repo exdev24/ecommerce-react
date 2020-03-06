@@ -55,9 +55,11 @@ const Signup = () => {
                 <label className="text-muted">Password</label>
                 <input onChange={handleChange('password')} type="password" className="form-control" value={password} />
             </div>
+            <Animated animationIn="fadeInLeft" animationOut="fadeOut" isVisible={true}>
             <button onClick={clickSubmit} className="btn btn-primary">
                 Submit
             </button>
+            </Animated>
         </form>
     );
 
@@ -81,8 +83,8 @@ const Signup = () => {
         >
             {showSuccess()}
             {showError()}
-            <Animated animationIn="bounceInUp" animationOut="fadeOut" isVisible={true}>
-              {signUpForm()}
+            <Animated animationIn="fadeInDown" animationOut="fadeOut" isVisible={true}>
+               {signUpForm()}
             </Animated>
         </Layout>
     );
